@@ -1,5 +1,6 @@
 * {
   padding: 0;
+  margin: 0;
 }
 
 .cool_font {
@@ -9,14 +10,19 @@
 .outputs {
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
 }
 
 .outputs img {
-  width: 85px;
+  width: 35px;
+  padding-top: 5px;
 }
 
 h1 {
-  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px;
+  /* border-radius: 20px; */
   padding: 8px 18px;
   font-size: 37px;
   color: white;
@@ -26,9 +32,12 @@ h1 {
 
 p {
   font-size: 20px;
+  margin: 8px 15px;
+  /* margin: 5px 5px; */
 }
 
 .submitButton {
+  margin: 13px 5px;
   font-size: larger;
   color: white;
   background-color: black;
@@ -38,7 +47,7 @@ p {
 }
 
 #cayleyTable {
-  table-layout: fixed;
+  /* table-layout: auto; */
   border: 3px solid black;
   border-radius: 8px;
   width: 300px;
@@ -68,6 +77,7 @@ th {
 }
 
 .tableart {
+  background-color: white;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -75,13 +85,25 @@ th {
 }
 
 .footer {
-  border-radius: 10px;
+  /* position: fixed;
+  /* width: 100%; */
   color: white;
+  bottom: 0;
   background-color: black;
-  margin-top: 200px;
-  padding: 0px 20px;
+  margin-top: 70px;
+  padding: 10px 20px;
 }
 a {
   color: wheat;
   /* background-color: white; */
+}
+
+h2 {
+  margin: 5px 5px;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-color: antiquewhite;
 }

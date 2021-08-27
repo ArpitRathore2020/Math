@@ -69,10 +69,10 @@ function additionModulo() {
   function closureRedGreen() {
     if (closureBoolean === true) {
       document.getElementById("closure_text").innerHTML =
-        "<b><font color='green'>Yes, Closure </font></b>✅";
+        "✅ <b><font color='green'>Yes, Closure </font></b>";
     } else {
       document.getElementById("closure_text").innerHTML =
-        "<b><font color='red'>Not Closure </font></b>❌";
+        "❌ <b><font color='red'>Not Closure </font></b>";
     }
   }
 
@@ -121,46 +121,46 @@ function additionModulo() {
   if (typeof identityElement === "number") {
     console.log(typeof identityElement, "check check");
     document.getElementById("identity_text").innerHTML =
-      "<b><font color='green'>Identity element = " +
+      "✅ <b><font color='green'>Identity element = " +
       identityElement.toString() +
-      "</font></b> ✅";
+      "</font></b> ";
   } else {
     document.getElementById("identity_text").innerHTML =
-      "<b><font color='red'>Identity element doesn't exist </font></b>❌";
+      "❌ <b><font color='red'>Identity element doesn't exist </font></b>";
   }
 
   // Inverse;
-  // let txt = "<b><font color='green'></font>";
-  // let inverseCollectionList = [];
-  // let inverseList = [];
-  // for (i = 0; i < h_row.length; i++) {
-  //   for (j = 0; j < h_row.length; j++) {
-  //     if (value_row[i][j] == identityElement) {
-  //       temp_row = [];
-  //       txt =
-  //         txt +
-  //         "Inverse of " +
-  //         h_row[i].toString() +
-  //         " is " +
-  //         h_row[j].toString() +
-  //         "</br>";
-  //       temp_row, push("Inverse of ", h_row[i], " is ", h_row[j]);
-  //       inverseCollectionList.push(temp_row);
-  //       inverseList.push(h_row[i]);
-  //     }
-  //   }
-  // }
+  let txt = "<b><font color='green'></font>";
+  let inverseCollectionList = [];
+  let inverseList = [];
+  for (i = 0; i < h_row.length; i++) {
+    for (j = 0; j < h_row.length; j++) {
+      if (value_row[i][j] == identityElement) {
+        temp_row = [];
+        txt =
+          txt +
+          "Inverse of " +
+          h_row[i].toString() +
+          " is " +
+          h_row[j].toString() +
+          "</br>";
+        temp_row.push(
+          "Inverse of " + h_row[i].toString() + " is " + h_row[j].toString()
+        );
+        inverseCollectionList.push(temp_row);
+        inverseList.push(h_row[i]);
+      }
+    }
+  }
 
-  // txt =
-  //   txt +
-  // if (inverseCollectionList.length === h_row.length) {
-  //   console.log("All inverses exists");
-  //   document.getElementById("inverse_text").innerHTML =
-  //     "<b><font color='green'>Inverse exists for all</font></b>";
-  // } else {
-  //   document.getElementById("inverse_text").innerHTML =
-  //     "<b><font color='red'>Inverse doesn't exists for all</font></b>";
-  // }
+  if (inverseCollectionList.length === h_row.length) {
+    console.log("All inverses exists");
+    document.getElementById("inverse_text").innerHTML =
+      "✅ <b><font color='green'>Inverse exists for all</font></b>";
+  } else {
+    document.getElementById("inverse_text").innerHTML =
+      "❌ <b><font color='red'>Inverse doesn't exists for all</font></b>";
+  }
 
   function value(i, j) {
     if (type === "Addition modulo") {
@@ -181,12 +181,12 @@ function additionModulo() {
   function com_load() {
     if (commutative === true) {
       document.getElementById("com_text").innerHTML =
-        "<b><font color='green'>Yes, Commutative </font></b>✅";
+        "✅ <b><font color='green'>Yes, Commutative </font></b>";
       document.getElementById("Commutative").src =
         "https://www.seekpng.com/png/detail/1-10353_check-mark-green-png-green-check-mark-svg.png".src;
     } else {
       document.getElementById("com_text").innerHTML =
-        "<b><font color='red'>Not Commutative </font></b>❌";
+        "❌ <b><font color='red'>Not Commutative </font></b>";
       console.log("Bad News");
       document.getElementById("Commutative").src =
         "https://cdn1.vectorstock.com/i/1000x1000/13/80/x-cross-icon-vector-26201380.jpg".src;
@@ -220,6 +220,7 @@ function additionModulo() {
   }
 
   document.getElementById("cayleyTable").innerHTML = cayleyTableText;
+
   // Associativitiy;
 
   // Commutativity;
@@ -253,4 +254,4 @@ function additionModulo() {
 //   m = parseInt(m);
 //   ans = (a + b) % m;
 //   alert("Answer is " + ans);
-// }
+//
