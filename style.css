@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+}
+
+.cool_font {
+  font-family: "Rampart One", cursive;
+}
+
+.outputs {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.outputs img {
+  width: 85px;
+}
+
+h1 {
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 37px;
+  color: white;
+  background-color: black;
+  font-family: "Rampart One", cursive;
+}
+
+p {
+  font-size: 20px;
+}
+
+.submitButton {
+  font-size: larger;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
+}
+
+#cayleyTable {
+  table-layout: fixed;
+  border: 3px solid black;
+  border-radius: 8px;
+  width: 300px;
+}
+
+#topHeader {
+  color: red;
+  width: 300px;
+  border: 3px solid black;
+  border-radius: 8px;
+}
+
+td,
+th {
+  border: 1px solid grey;
+  text-align: center;
+  padding: 10px;
+}
+
+#leftHeader,
+#zip {
+  color: red;
+  width: 7px;
+  border: 3px solid black;
+  border-radius: 5px;
+  widows: 50px;
+}
+
+.tableart {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}

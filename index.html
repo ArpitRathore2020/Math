@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <h1>Check for group</h1>
+    <hr />
+    <p>Find whether the set</p>
+    <p>
+      G = <span class="cool_font">{</span>
+      <input type="text" name="set" id="set" />
+      <span class="cool_font"> }</span>  is a group or not, where {G,*} is closed under * where * is
+      <select required name="type" id="type">
+        <option value="Addition">Addition</option>
+        <option value="Multiplication">Multiplication</option>
+        <option value="Substraction">Substraction</option>
+        <option value="Division">Division</option>
+        <option value="Addition modulo">Addition modulo</option>
+        <option value="Multiplication modulo">Multiplication modulo</option>
+
+        </p>
+      </select>
+      <br />
+      <p>In case you have chosen modulo operation a*<sub>n</sub>b,  
+      n = <input type="number" name="mod" id="mod" /></p>
+
+    </p>
+    <p>Seperate set elements by a comma.</p>
+    <hr />
+    <center>
+    <button onclick="additionModulo()" class="submitButton ">
+      Check
+    </button>
+  </center>
+    <hr />
+    <div class="outputs" id="closure">
+      <img
+        src="https://i.pinimg.com/originals/3b/cb/22/3bcb229529e90012173465598ae42764.jpg"
+        alt=""
+      />
+      <p id="closure_text">Closure</p>
+    </div>
+    <div class="outputs" id="Commutative">
+      <img
+        src="https://i.pinimg.com/originals/3b/cb/22/3bcb229529e90012173465598ae42764.jpg"
+        alt=""
+      />
+      <p id="com_text">Commutative</p>
+    </div>
+    <div class="outputs" id="Identity">
+      <img
+        src="https://i.pinimg.com/originals/3b/cb/22/3bcb229529e90012173465598ae42764.jpg"
+        alt="Identity"
+      />
+      <p id="identity_text">Existence of identity element</p>
+    </div>
+    <!-- <div class="outputs" id="inverse">
+      <img
+        src="https://i.pinimg.com/originals/3b/cb/22/3bcb229529e90012173465598ae42764.jpg"
+        alt=""
+      />
+      <p id="inverse_text">Existence of all inverse elements</p>
+    </div> -->
+    <hr>
+      
+    <div class="tableart">
+      <table id="zip">
+        <tr>
+          <th>*</th>
+        </tr>
+      </table>
+      <table id="topHeader"></table>    
+    </div>
+    <div class="tableart">
+        <table id="leftHeader"></table>
+    <table id="cayleyTable"></table>
+  </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
