@@ -69,10 +69,10 @@ function additionModulo() {
   function closureRedGreen() {
     if (closureBoolean === true) {
       document.getElementById("closure_text").innerHTML =
-        "<b><font color='green'>Yes, Closure </font></b>";
+        "<b><font color='green'>Yes, Closure </font></b>✅";
     } else {
       document.getElementById("closure_text").innerHTML =
-        "<b><font color='red'>Not Closure </font></b>";
+        "<b><font color='red'>Not Closure </font></b>❌";
     }
   }
 
@@ -123,10 +123,10 @@ function additionModulo() {
     document.getElementById("identity_text").innerHTML =
       "<b><font color='green'>Identity element = " +
       identityElement.toString() +
-      "</font></b>";
+      "</font></b> ✅";
   } else {
     document.getElementById("identity_text").innerHTML =
-      "<b><font color='red'>Identity element doesn't exist</font></b>";
+      "<b><font color='red'>Identity element doesn't exist </font></b>❌";
   }
 
   // Inverse;
@@ -181,12 +181,12 @@ function additionModulo() {
   function com_load() {
     if (commutative === true) {
       document.getElementById("com_text").innerHTML =
-        "<b><font color='green'>Yes, Commutative </font></b>";
+        "<b><font color='green'>Yes, Commutative </font></b>✅";
       document.getElementById("Commutative").src =
         "https://www.seekpng.com/png/detail/1-10353_check-mark-green-png-green-check-mark-svg.png".src;
     } else {
       document.getElementById("com_text").innerHTML =
-        "<b><font color='red'>Not Commutative </font></b>";
+        "<b><font color='red'>Not Commutative </font></b>❌";
       console.log("Bad News");
       document.getElementById("Commutative").src =
         "https://cdn1.vectorstock.com/i/1000x1000/13/80/x-cross-icon-vector-26201380.jpg".src;
