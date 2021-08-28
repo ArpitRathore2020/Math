@@ -132,7 +132,7 @@ function additionModulo() {
   }
 
   // Inverse;
-  let txt = "<b><font color='green'></font>";
+  let txt = "";
   let inverseCollectionList = [];
   let inverseList = [];
   for (i = 0; i < h_row.length; i++) {
@@ -141,11 +141,12 @@ function additionModulo() {
         temp_row = [];
         txt =
           txt +
-          "Inverse of " +
+          "<li><b>Inverse of <font color='blue'>" +
           h_row[i].toString() +
-          " is " +
+          "</font>" +
+          " is <font color='green'>" +
           h_row[j].toString() +
-          "</br>";
+          "</font></b></li>";
         temp_row.push(
           "Inverse of " + h_row[i].toString() + " is " + h_row[j].toString()
         );
@@ -154,6 +155,15 @@ function additionModulo() {
       }
     }
   }
+  for (i = 0; i < l; i++) {
+    if (inverseList.includes(h_row[i]) === false) {
+      txt +=
+        '<li><b>Inverse of <font color="red">' +
+        h_row[i].toString() +
+        "</font> doesn't exist </b></li>";
+    }
+  }
+  document.getElementById("Inverse_ul").innerHTML = txt;
 
   if (inverseCollectionList.length === h_row.length) {
     console.log("All inverses exists");
@@ -276,7 +286,7 @@ function additionModulo() {
     associativity === true
   ) {
     document.getElementById("finalResult").innerHTML =
-      "<p><font><b>{G,*} is an abelian Group</b></font></p>";
+      "<p><b>{G,*} is an <font color='green'>abelian Group</b></font></p>";
   } else if (
     commutative === false &&
     closureBoolean === true &&
@@ -285,9 +295,9 @@ function additionModulo() {
     associativity === true
   ) {
     document.getElementById("finalResult").innerHTML =
-      "<p><b>{G,*} is a non-abelian Group</b></p>";
+      "<p><b>{G,*} is a </font><font color='red'>non-abelian</font><font color='green'> Group</font></b></p>";
   } else {
     document.getElementById("finalResult").innerHTML =
-      "<p><b>{G,*} is a <b>NOT</b> a Group</b></p>";
+      "<p><b>{G,*} is a <font color='red'><b>NOT</b></font> a Group</b></p>";
   }
 }
