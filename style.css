@@ -24,7 +24,7 @@ h1 {
   margin: 0px 0px;
   /* border-radius: 20px; */
   padding: 8px 18px;
-  font-size: 37px;
+  font-size: 40px;
   color: white;
   background-color: black;
   font-family: "Rampart One", cursive;
@@ -77,7 +77,7 @@ th {
 }
 
 .tableart {
-  background-color: white;
+  background-color: antiquewhite;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -85,14 +85,24 @@ th {
 }
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* position: fixed;
   /* width: 100%; */
   color: white;
   bottom: 0;
   background-color: black;
-  margin-top: 70px;
+  margin-top: 100px;
   padding: 10px 20px;
 }
+
+.footer p,
+a {
+  font-size: 14px;
+}
+
 a {
   color: wheat;
   /* background-color: white; */
@@ -106,4 +116,8 @@ h2 {
 
 body {
   background-color: antiquewhite;
+}
+
+#hide {
+  display: none;
 }

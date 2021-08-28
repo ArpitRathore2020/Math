@@ -20,7 +20,7 @@
     ></script>
   </head>
   <body>
-    <h1>Check for group</h1>
+    <h1>Check for Group</h1>
     <hr />
     <p>Find whether the set</p>
     <p>
@@ -40,47 +40,37 @@
         </p>
       </select>
       <br />
-      <p>In case you have chosen modulo operation a*<sub>n</sub>b,  
+      <p>In case you have chosen modulo operation a*<sub>n</sub>b, <br>
       n = <input type="number" name="mod" id="mod" /></p>
 
     </p>
     <p>Seperate set elements by a comma.</p>
     <center>
-    <button onclick="additionModulo()" class="submitButton ">
-      Check
-    </button>
-  </center>
+      <button onclick="additionModulo()" class="submitButton ">
+        Check
+      </button>
+    </center>
     <hr />
+    <div id="finalResult"></div>
+    <hr>
     <div class="outputs" id="closure">
-      <img
-        src="https://cdn.pixabay.com/photo/2017/02/01/00/29/lone-star-2028578_640.png"
-        alt=""
-      />
       <p id="closure_text">Closure</p>
     </div>
     <div class="outputs" id="Commutative">
-      <img
-        src="https://cdn.pixabay.com/photo/2017/02/01/00/29/lone-star-2028578_640.png"
-        alt=""
-      />
       <p id="com_text">Commutative</p>
     </div>
     <div class="outputs" id="Identity">
-      <img
-        src="https://cdn.pixabay.com/photo/2017/02/01/00/29/lone-star-2028578_640.png"
-        alt="Identity"
-      />
       <p id="identity_text">Existence of identity element</p>
     </div>
     <div class="outputs" id="inverse">
-      <img
-        src="https://cdn.pixabay.com/photo/2017/02/01/00/29/lone-star-2028578_640.png"
-        alt=""
-      />
       <p id="inverse_text">Existence of all inverse elements</p>
     </div>
+    <div class="outputs" id="associativity">
+
+      <p id="associativity_text">Associativity</p>
+    </div>
     <hr>
-    <div class="hide">
+    <div id="hide">
       <h2>Cayley Table</h2>
     <div class="tableart">
       <table id="zip">
@@ -97,10 +87,11 @@
 </div>
     <div class="footer">
       <p>Created by: <b>Arpit </b> <br></p>
-      <a href="https://github.com/ArpitRathore2020">
+      <a href="https://github.com/ArpitRathore2020/Math" target="_blank">
       Click here  
+      to fork/clone source code from my GITHUB page 
     </a>
-    to fork/clone source code from my GITHUB page
+    
     </div>
     <script src="index.js"></script>
   </body>

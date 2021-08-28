@@ -7,6 +7,8 @@ function additionModulo() {
   let identityElement;
   let commutative;
 
+  document.getElementById("hide").style.display = "block";
+
   if (h_row.length === 1) {
     alert(
       "Invalid input \n 1. Make sure that the set has at least two elements. \n 2. Ensure all elements are sepreated by a comma."
@@ -66,16 +68,6 @@ function additionModulo() {
     return;
   }
 
-  function closureRedGreen() {
-    if (closureBoolean === true) {
-      document.getElementById("closure_text").innerHTML =
-        "✅ <b><font color='green'>Yes, Closure </font></b>";
-    } else {
-      document.getElementById("closure_text").innerHTML =
-        "❌ <b><font color='red'>Not Closure </font></b>";
-    }
-  }
-
   //Closure
   closureBoolean = true;
   for (let i = 0; i < l; i++) {
@@ -87,27 +79,37 @@ function additionModulo() {
     }
   }
 
-  closureRedGreen();
+  if (closureBoolean === true) {
+    document.getElementById("closure_text").innerHTML =
+      "✅ <b><font color='green'>Yes, Closure </font></b>";
+  } else {
+    document.getElementById("closure_text").innerHTML =
+      "❌ <b><font color='red'>Not Closure </font></b>";
+  }
 
   // Commutativity;
-  let c_flag = 0;
+  commutative = true;
   for (let i = 0; i < l; i++) {
     for (let j = 0; j < l; j++) {
       if (i != j && value_row[i][j] === value_row[j][i]) {
-        c_flag = 1;
         continue;
-      } else if (i != j) {
-        c_flag = 0;
+      } else if (i !== j) {
+        commutative = false;
+      } else if (i === j) {
       }
     }
   }
 
-  if (c_flag === 1) {
-    commutative = true;
-    console.log("Yes Commutative (S)");
+  if (commutative === true) {
+    document.getElementById("com_text").innerHTML =
+      "✅ <b><font color='green'>Yes, Commutative </font></b>";
+    document.getElementById("Commutative").src =
+      "https://www.seekpng.com/png/detail/1-10353_check-mark-green-png-green-check-mark-svg.png".src;
   } else {
-    commutative = false;
-    console.log("no not Commutative (S)");
+    document.getElementById("com_text").innerHTML =
+      "❌ <b><font color='red'>Not Commutative </font></b>";
+    document.getElementById("Commutative").src =
+      "https://cdn1.vectorstock.com/i/1000x1000/13/80/x-cross-icon-vector-26201380.jpg".src;
   }
 
   // Identity Element
@@ -213,7 +215,6 @@ function additionModulo() {
   for (i = 0; i < tableDataArray.length; i++) {
     cayleyTableText += "<tr>";
     for (j = 0; j < tableDataArray.length; j++) {
-      console.log(i, j);
       cayleyTableText += "<td>" + tableDataArray[i][j].toString() + "</td>";
     }
     cayleyTableText += "</tr>";
@@ -222,36 +223,71 @@ function additionModulo() {
   document.getElementById("cayleyTable").innerHTML = cayleyTableText;
 
   // Associativitiy;
+  let associativity = true;
+  for (i = 0; i < l; i++) {
+    for (j = 0; j < l; j++) {
+      for (k = 0; k < l; k++) {
+        if (
+          type === "Addition" &&
+          value_row[i][j] + h_row[k] === h_row[i] + value_row[j][k]
+        ) {
+        } else if (
+          type === "Multiplication" &&
+          value_row[i][j] * h_row[k] === h_row[i] * value_row[j][k]
+        ) {
+        } else if (
+          type === "Substraction" &&
+          value_row[i][j] - h_row[k] === h_row[i] - value_row[j][k]
+        ) {
+        } else if (
+          type === "Division" &&
+          value_row[i][j] / h_row[k] === h_row[i] / value_row[j][k]
+        ) {
+        } else if (
+          type === "Addition modulo" &&
+          (value_row[i][j] + h_row[k]) % mod ===
+            (h_row[i] + value_row[j][k]) % mod
+        ) {
+        } else if (
+          type === "Multiplication modulo" &&
+          (value_row[i][j] * h_row[k]) % mod ===
+            (h_row[i] * value_row[j][k]) % mod
+        ) {
+        } else {
+          associativity = false;
+        }
+      }
+    }
+  }
 
-  // Commutativity;
-  // let c_flag = 0;
-  // for (i = 0; i < h_row.length; i++) {
-  //   for (j = 0; j < h_row.length; j++) {
-  //     if (value(h_row[i], h_row[j]) == value(h_row[j], h_row[i])) {
-  //       continue;
-  //     } else {
-  //       c_flag = 1;
-  //       break;
-  //     }
-  //   }
-  // }
-  // if (c_flag === 0) {
-  //   console.log("Yes Commutative");
-  // } else if (c_flag === 1) {
-  //   console.log("Not commuatative");
-  // } else {
-  //   console.log("Ar Error commutative");
-  // }
+  if (associativity === true) {
+    document.getElementById("associativity_text").innerHTML =
+      "✅ <b><font color='green'>Yes, Associative </font></b>";
+  } else if (associativity === false) {
+    document.getElementById("associativity_text").innerHTML =
+      "❌ <b><font color='red'>Not, Associative </font></b>";
+  }
+
+  if (
+    commutative === true &&
+    closureBoolean === true &&
+    identityElementExists === true &&
+    inverseCollectionList.length === h_row.length &&
+    associativity === true
+  ) {
+    document.getElementById("finalResult").innerHTML =
+      "<p><font><b>{G,*} is an abelian Group</b></font></p>";
+  } else if (
+    commutative === false &&
+    closureBoolean === true &&
+    identityElementExists === true &&
+    inverseCollectionList.length === h_row.length &&
+    associativity === true
+  ) {
+    document.getElementById("finalResult").innerHTML =
+      "<p><b>{G,*} is a non-abelian Group</b></p>";
+  } else {
+    document.getElementById("finalResult").innerHTML =
+      "<p><b>{G,*} is a <b>NOT</b> a Group</b></p>";
+  }
 }
-
-// function additionModulo() {
-//   let ans;
-//   var a = window.prompt("Enter the value of a: ");
-//   var b = window.prompt("Enter the value of b: ");
-//   var m = window.prompt("Enter the value of m: ");
-//   a = parseInt(a);
-//   b = parseInt(b);
-//   m = parseInt(m);
-//   ans = (a + b) % m;
-//   alert("Answer is " + ans);
-//
