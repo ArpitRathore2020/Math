@@ -1,4 +1,5 @@
 function additionModulo() {
+  // try {
   let set = document.getElementById("set").value;
   let mod = document.getElementById("mod").value;
   let type = document.getElementById("type").value;
@@ -38,30 +39,39 @@ function additionModulo() {
         temp_row.push(h_row[i] - v_row[j]);
       } else if (type === "Division") {
         temp_row.push(h_row[i] / v_row[j]);
+      } else if (type === "Custom") {
+        temp_row.push(
+          eval(
+            document
+              .getElementById("op")
+              .value.replaceAll("a", "(h_row[i])")
+              .replaceAll("b", "(v_row[j])")
+            // .replaceAll(".", "Math.")
+          )
+        );
       }
     }
     value_row.push(temp_row);
   }
-  console.log(value_row);
 
-  function listAreEqual(l1, l2) {
-    let isEqual = true;
-    if (Array.isArray(l1) === false || Array.isArray(l2) === false) {
-      isEqual = false;
-      return isEqual;
-    }
-    if (l1.length === 0 || l2.length === 0) {
-      isEqual = false;
-      return isEqual;
-    }
-    for (let i = 0; i < l; i++) {
-      if (l1[i] !== l2[i]) {
-        isEqual = false;
-        return isEqual;
-      }
-    }
-    return isEqual;
-  }
+  // function listAreEqual(l1, l2) {
+  //   let isEqual = true;
+  //   if (Array.isArray(l1) === false || Array.isArray(l2) === false) {
+  //     isEqual = false;
+  //     return isEqual;
+  //   }
+  //   if (l1.length === 0 || l2.length === 0) {
+  //     isEqual = false;
+  //     return isEqual;
+  //   }
+  //   for (let i = 0; i < l; i++) {
+  //     if (l1[i] !== l2[i]) {
+  //       isEqual = false;
+  //       return isEqual;
+  //     }
+  //   }
+  //   return isEqual;
+  // }
 
   if (h_row.length == 0) {
     alert("Set G is empty");
@@ -263,6 +273,33 @@ function additionModulo() {
           (value_row[i][j] * h_row[k]) % mod ===
             (h_row[i] * value_row[j][k]) % mod
         ) {
+        } else if (
+          type === "#1" &&
+          value_row[i][j] + h_row[k] + value_row[i][j] * h_row[k] ===
+            h_row[k] + value_row[i][j] + h_row[k] * value_row[i][j]
+        ) {
+        } else if (
+          type === "#2" &&
+          value_row[i][j] + h_row[k] - value_row[i][j] * h_row[k] ===
+            h_row[k] + value_row[i][j] - h_row[k] * value_row[i][j]
+        ) {
+        } else if (
+          type === "Custom" &&
+          eval(
+            document
+              .getElementById("op")
+              .value.replaceAll("a", "(value_row[i][j])")
+              .replaceAll("b", "(h_row[k])")
+            // .replaceAll(".", "Math.")
+          ) ===
+            eval(
+              document
+                .getElementById("op")
+                .value.replaceAll("a", "(h_row[i])")
+                .replaceAll("b", "(value_row[j][k])")
+              // .replaceAll(".", "Math.")
+            )
+        ) {
         } else {
           associativity = false;
         }
@@ -301,3 +338,8 @@ function additionModulo() {
       "<p><b>{G,*} is a <font color='red'><b>NOT</b></font> a Group</b></p>";
   }
 }
+// catch (err) {
+//   alert(
+//     "Invalid input \n 1. Make sure that the set has at least two elements. \n 2. Ensure all elements are sepreated by a comma. \n 3. Make sure you have used math operations like '*', '+' etc."
+//   );
+// }

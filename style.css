@@ -26,6 +26,14 @@
   width: 50px;
 }
 
+#op {
+  color: white;
+  background-color: black;
+  border-radius: 7px;
+  height: 23px;
+  width: 150px;
+}
+
 .cool_font {
   font-family: "Rampart One", cursive;
 }

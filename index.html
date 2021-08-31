@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <!-- <script src="math.js" type="text/javascript"></script> -->
     <title>Document</title>
     <script
       type="text/javascript"
@@ -32,18 +33,20 @@
         <option value="Multiplication">Multiplication</option>
         <option value="Substraction">Substraction</option>
         <option value="Division">Division</option>
-        <option value="Addition modulo">Addition modulo</option>
-        <option value="Multiplication modulo">Multiplication modulo</option>
+        <option value="Addition modulo">Addition modulo n</option>
+        <option value="Multiplication modulo">Multiplication modulo n</option>
+        <option value="Custom">Custom</option>
         <!-- <option value="type#1">a*b = a+b+ab</option>
         <option value="type#2">a*b = a+b-ab</option> -->
 
         </p>
       </select>
       <br />
-      <p>In case you have chosen modulo operation a*<sub>n</sub>b, <br>
-      n = <input type="number" name="mod" id="mod" /></p>
-
-    </p>
+      <p>If you have chosen modulo operation a*<sub>n</sub>b, <br>
+      n = <input type="number" name="mod" id="mod" /></p> 
+      <p>If you have chosen custom operation <br>
+         a*b= <input type="text" id="op"> <br>
+        <font color='red'>To represent multiplication use a*b instead of ab</font> </p>
     <p>Seperate set elements by a comma.</p>
     <center>
       <button onclick="additionModulo()" class="submitButton ">
