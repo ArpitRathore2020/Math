@@ -3,6 +3,23 @@
   margin: 0;
 }
 
+body,
+html {
+  background-image: url(https://previews.123rf.com/images/balabolka/balabolka1804/balabolka180400103/99260149-cartoon-cute-doodles-hand-drawn-soccer-illustration.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.block {
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+}
+
 #set {
   color: white;
   background-color: black;
@@ -19,16 +36,16 @@
 }
 
 #mod {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   border-radius: 7px;
   height: 23px;
   width: 50px;
 }
 
 #op {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   border-radius: 7px;
   height: 23px;
   width: 150px;
@@ -52,14 +69,17 @@
 h1 {
   display: flex;
   justify-content: center;
-  margin: 0px 0px;
   width: 100%;
+  border: 5px solid gray;
+  border-right: 2px solid gray;
+  border-left: 2px solid gray;
   /* border-radius: 20px; */
   padding: 8px 0px;
   font-size: 40px;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   font-family: "Rampart One", cursive;
+  border-radius: 30px;
 }
 
 p {
@@ -69,15 +89,31 @@ p {
   /* margin: 5px 5px; */
 }
 
-.submitButton,
-.reset {
-  margin: 10px 5px;
-  font-size: larger;
-  color: white;
-  background-color: rgb(61, 61, 247);
+.submitButton {
+  font-family: "Kaisei HarunoUmi", serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.932);
   border-radius: 10px;
-  width: 110px;
+  width: 115px;
   height: 35px;
+  border-right: 3px solid gray;
+  border-bottom: 3px solid gray;
+  cursor: pointer;
+}
+
+#check {
+  min-height: 60px;
+}
+
+.submitButton:hover {
+  background-color: white;
+  margin-top: 8px;
+  margin-left: 8px;
 }
 
 #cayleyTable {
@@ -122,10 +158,11 @@ th {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100px;
   width: 100%;
-  color: white;
+  color: black;
   bottom: 0;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0.945);
   margin-top: 10px;
   padding: 2px 0px;
 }
@@ -136,8 +173,23 @@ a {
 }
 
 a {
-  color: wheat;
-  /* background-color: white; */
+  text-decoration: none;
+  background-color: rgb(43, 40, 40);
+  color: white;
+  border-radius: 7px;
+  padding: 10px 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+a:hover {
+  background-color: black;
+  border-radius: 7px;
+  padding: 10px 20px;
+  margin-top: 4px;
+  margin-bottom: 5px;
+  margin-left: 8px;
 }
 
 h2 {
@@ -146,10 +198,15 @@ h2 {
   justify-content: center;
 }
 
-body {
+#hide {
+  display: none;
 }
 
-#hide {
+#custom_hide {
+  display: none;
+}
+
+#mod_hide {
   display: none;
 }
 

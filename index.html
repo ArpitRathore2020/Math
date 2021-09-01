@@ -10,9 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <!-- <script src="math.js" type="text/javascript"></script> -->
-    <title>Document</title>
+    <title>Group Calculator</title>
     <script
       type="text/javascript"
       id="MathJax-script"
@@ -21,20 +22,20 @@
     ></script>
   </head>
   <body>
+    <div class="block">
     <h1>Check for Group</h1>
-    <hr />
     <p>Find whether the set</p>
     <p>
       G = <span class="cool_font">{</span>
       <input type="text" name="set" id="set" />
       <span class="cool_font"> }</span>  is a group or not, where {G,*} is a set under operation * where * is
-      <select required name="type" id="type">
+      <select onchange="customfn()" required name="type" id="type">
         <option value="Addition">Addition</option>
         <option value="Multiplication">Multiplication</option>
         <option value="Substraction">Substraction</option>
         <option value="Division">Division</option>
-        <option value="Addition modulo">Addition modulo n</option>
-        <option value="Multiplication modulo">Multiplication modulo n</option>
+        <option value="Addition modulo">Addition modulo</option>
+        <option value="Multiplication modulo">Multiplication modulo</option>
         <option value="Custom">Custom</option>
         <!-- <option value="type#1">a*b = a+b+ab</option>
         <option value="type#2">a*b = a+b-ab</option> -->
@@ -42,20 +43,23 @@
         </p>
       </select>
       <br />
-      <p>If you have chosen modulo operation a*<sub>n</sub>b, <br>
+      <div id="mod_hide">
+      <p>In a*<sub>n</sub>b, &nbsp;
       n = <input type="number" name="mod" id="mod" /></p> 
-      <p>If you have chosen custom operation <br>
-         a*b= <input type="text" id="op"> <br>
+    </div>
+      <div id="custom_hide">
+      <p>a*b= <input type="text" id="op"> <br>
         <font color='red'>To represent multiplication use a*b instead of ab</font> </p>
+      </div>
     <p>Seperate set elements by a comma.</p>
+    <div id="check">
     <center>
       <button onclick="additionModulo()" class="submitButton ">
         Check
       </button>
     </center>
-    <hr />
+  </div>
     <div id="finalResult"></div>
-    <hr>
     <div class="outputs" id="closure">
       <p id="closure_text">Closure</p>
     </div>
@@ -72,7 +76,6 @@
 
       <p id="associativity_text">Associativity</p>
     </div>
-    <hr>
     <div id="hide">
       <h2>Cayley Table</h2>
     <div class="tableart">
@@ -87,19 +90,17 @@
         <table id="leftHeader"></table>
     <table id="cayleyTable"></table>
   </div>
-  <hr>
-  <h3>Valid Inverses: </h3>
+  <h3>Inverses: </h3>
   <ul id="Inverse_ul">
   </ul>
-  <hr>
 </div>
     <div class="footer">
-      <p>Created by: <b>Arpit </b> <br></p>
+      <p>Created by: <b>Arpit Rathore</b> <br></p>
       <a href="https://github.com/ArpitRathore2020/Math" target="_blank">
-      Click here  
-      to fork/clone source code from my GITHUB page 
+       GITHUB page 
     </a>
     </div>
+  </div>
     <script src="index.js"></script>
   </body>
 </html>

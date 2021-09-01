@@ -1,3 +1,18 @@
+function customfn() {
+  let type = document.getElementById("type").value;
+
+  if (type === "Custom") {
+    document.getElementById("custom_hide").style.display = "block";
+  } else {
+    document.getElementById("custom_hide").style.display = "none";
+  }
+  if (type === "Addition modulo" || type === "Multiplication modulo") {
+    document.getElementById("mod_hide").style.display = "block";
+  } else {
+    document.getElementById("mod_hide").style.display = "none";
+  }
+}
+
 function additionModulo() {
   // try {
   let set = document.getElementById("set").value;
@@ -151,12 +166,12 @@ function additionModulo() {
         temp_row = [];
         txt =
           txt +
-          "<li><b>Inverse of <font color='blue'>" +
+          "<li>Inverse of <font color='blue'>" +
           h_row[i].toString() +
           "</font>" +
           " is <font color='green'>" +
           h_row[j].toString() +
-          "</font></b></li>";
+          "</font></li>";
         temp_row.push(
           "Inverse of " + h_row[i].toString() + " is " + h_row[j].toString()
         );
@@ -168,9 +183,9 @@ function additionModulo() {
   for (i = 0; i < l; i++) {
     if (inverseList.includes(h_row[i]) === false) {
       txt +=
-        '<li><b>Inverse of <font color="red">' +
+        '<li>Inverse of <font color="red">' +
         h_row[i].toString() +
-        "</font> doesn't exist </b></li>";
+        "</font> doesn't exist</li>";
     }
   }
   document.getElementById("Inverse_ul").innerHTML = txt;
