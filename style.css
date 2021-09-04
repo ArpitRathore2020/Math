@@ -35,7 +35,8 @@ html {
   height: 25px;
 }
 
-#mod {
+#mod,
+#Unvalue {
   color: black;
   background-color: white;
   border-radius: 7px;
@@ -228,4 +229,8 @@ h3 {
 
 .bottom {
   margin-bottom: 14px;
+}
+
+#Un {
+  display: none;
 }

@@ -21,7 +21,7 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <!-- <script src="math.js" type="text/javascript"></script> -->
+    <script src="math.js" type="text/javascript"></script>
     <title>Group Calculator</title>
     <script
       type="text/javascript"
@@ -45,6 +45,7 @@
         <option value="Division">Division</option>
         <option value="Addition modulo">Addition modulo</option>
         <option value="Multiplication modulo">Multiplication modulo</option>
+        <option value="U">U(n)</option>
         <option value="Custom">Custom</option>
         <!-- <option value="type#1">a*b = a+b+ab</option>
         <option value="type#2">a*b = a+b-ab</option> -->
@@ -55,6 +56,11 @@
       <div id="mod_hide">
       <p>In a*<sub>n</sub>b, &nbsp;
       n = <input type="number" name="mod" id="mod" /></p> 
+    </div>
+      <div id="Un">
+        &nbsp; &nbsp; You don't need to fill set G, it will be genrated automatically.
+      <p> $$U_{n} = \{ x \in \mathbb{N}, \; x &lt; n,\; \text{gcd}(x,n)=1 \}  $$
+      n = <input type="number" name="mod" id="Unvalue" /></p> 
     </div>
       <div id="custom_hide">
       <p>a*b= <input type="text" id="op"> <br>

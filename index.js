@@ -11,17 +11,63 @@ function customfn() {
   } else {
     document.getElementById("mod_hide").style.display = "none";
   }
+  if (type === "U") {
+    document.getElementById("Un").style.display = "block";
+  } else {
+    document.getElementById("Un").style.display = "none";
+  }
+}
+
+function gcd_fn(a, b) {
+  let gcd = -1;
+  let a_factor_list = [];
+  for (let i = 0; i < a + 1; i++) {
+    if (a % i === 0) {
+      a_factor_list.push(i);
+    }
+  }
+  let b_factor_list = [];
+  for (let i = 0; i < b + 1; i++) {
+    if (b % i === 0) {
+      b_factor_list.push(i);
+    }
+  }
+
+  for (let i = 0; i < a_factor_list.length; i++) {
+    for (let j = 0; j < b_factor_list.length; j++) {
+      if (a_factor_list[i] === b_factor_list[j]) {
+        gcd = a_factor_list[i];
+      }
+    }
+  }
+
+  return gcd;
 }
 
 function additionModulo() {
-  // try {
   let set = document.getElementById("set").value;
-  let mod = document.getElementById("mod").value;
   let type = document.getElementById("type").value;
+  let mod = document.getElementById("mod").value;
+
+  if (type === "U") {
+    set = "";
+    let n = document.getElementById("Unvalue").value;
+    for (i = 0; i < n; i++) {
+      if (gcd_fn(i, n) === 1 && i < n - 1) {
+        set += i.toString() + ",";
+      } else if (gcd_fn(i, n) === 1 && i === n - 1) {
+        set += i.toString();
+      }
+    }
+    type = "Multiplication modulo";
+    mod = n;
+  }
+
   let h_row = set.split(",");
   let l = h_row.length;
   let identityElement;
   let commutative;
+  // try {
 
   document.getElementById("hide").style.display = "block";
 
@@ -180,7 +226,7 @@ function additionModulo() {
       }
     }
   }
-  for (i = 0; i < l; i++) {
+  for (i = 0; i < h_row.length; i++) {
     if (inverseList.includes(h_row[i]) === false) {
       txt +=
         '<li>Inverse of <font color="red">' +
@@ -232,16 +278,17 @@ function additionModulo() {
   com_load();
 
   let tableDataArray = value_row;
+  console.log(tableDataArray);
   // tableDataArray.unshift(h_row);
 
   let cayleyHeaderTable = "<tr>";
-  for (i = 0; i < l; i++) {
+  for (i = 0; i < h_row.length; i++) {
     cayleyHeaderTable += "<th>" + h_row[i].toString() + "</th>";
   }
   document.getElementById("topHeader").innerHTML = cayleyHeaderTable;
 
   let cayleyLeftTable = "";
-  for (i = 0; i < l; i++) {
+  for (i = 0; i < h_row.length; i++) {
     cayleyLeftTable += "<tr><th>" + h_row[i].toString() + "</th></tr>";
   }
   document.getElementById("leftHeader").innerHTML = cayleyLeftTable;
@@ -259,8 +306,8 @@ function additionModulo() {
 
   // Associativitiy;
   let associativity = true;
-  for (i = 0; i < l; i++) {
-    for (j = 0; j < l; j++) {
+  for (i = 0; i < h_row.length; i++) {
+    for (j = 0; j < h_row.length; j++) {
       for (k = 0; k < l; k++) {
         if (
           type === "Addition" &&
@@ -338,7 +385,9 @@ function additionModulo() {
     associativity === true
   ) {
     document.getElementById("finalResult").innerHTML =
-      "<p><b>{G,*} is an <font color='green'>abelian Group</b></font></p>";
+      "<p><b>{G,*}={" +
+      h_row.toString() +
+      "} is an <font color='green'>abelian Group</b></font></p>";
   } else if (
     commutative === false &&
     closureBoolean === true &&
@@ -347,10 +396,14 @@ function additionModulo() {
     associativity === true
   ) {
     document.getElementById("finalResult").innerHTML =
-      "<p><b>{G,*} is a </font><font color='red'>non-abelian</font><font color='green'> Group</font></b></p>";
+      "<p><b>{G,*}={" +
+      h_row.toString() +
+      "} is a </font><font color='red'>non-abelian</font><font color='green'> Group</font></b></p>";
   } else {
     document.getElementById("finalResult").innerHTML =
-      "<p><b>{G,*} is a <font color='red'><b>NOT</b></font> a Group</b></p>";
+      "<p><b>{G,*}={" +
+      h_row.toString() +
+      "} is a <font color='red'><b>NOT</b></font> a Group</b></p>";
   }
 }
 // catch (err) {
