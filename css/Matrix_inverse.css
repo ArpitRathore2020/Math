@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#red {
+  color: green;
+  font-size: 30px;
+}
+
+.cool_font {
+  font-family: "Rampart One", cursive;
+}
+
+body,
+html {
+  background-image: url(https://previews.123rf.com/images/balabolka/balabolka1804/balabolka180400103/99260149-cartoon-cute-doodles-hand-drawn-soccer-illustration.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.block {
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  margin: 8px 15px;
+  padding-bottom: 2px;
+  /* margin: 5px 5px; */
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 5px solid gray;
+  border-right: 2px solid gray;
+  border-left: 2px solid gray;
+  /* border-radius: 20px; */
+  padding: 8px 0px;
+  font-size: 40px;
+  color: black;
+  background-color: white;
+  font-family: "Rampart One", cursive;
+  border-radius: 30px;
+}
+
+input {
+  width: 50px;
+  color: white;
+  background-color: rgba(78, 72, 72, 0.452);
+  border-radius: 10px;
+  height: 23px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#check {
+  min-height: 60px;
+}
+
+.submitButton {
+  font-family: "Kaisei HarunoUmi", serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.932);
+  border-radius: 10px;
+  width: 120px;
+  height: 35px;
+  border-right: 3px solid gray;
+  border-bottom: 3px solid gray;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: white;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+#ans {
+  font-size: 14px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  width: 100%;
+  color: black;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.945);
+  margin-top: 10px;
+  padding: 2px 0px;
+}
+
+a {
+  text-decoration: none;
+  background-color: rgb(43, 40, 40);
+  color: white;
+  border-radius: 7px;
+  padding: 10px 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}

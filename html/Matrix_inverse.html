@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-J1JGB89M9N"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-J1JGB89M9N");
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <link rel="stylesheet" href="/css/Matrix_inverse.css" />
+    <title>Matrix Inverse</title>
+  </head>
+  <body>
+    <div class="block">
+      <h1>Matrix Inverse</h1>
+      <p>
+        Find the inverse of the element $$ \begin{bmatrix} a & b \\ c & d
+        \end{bmatrix} \; \text{in} \; GL(2,Z_{n})$$
+      </p>
+      <p class="flex">
+        a = <input type="number" name="" id="a" /> &nbsp; b =
+        <input type="number" name="" id="b" />
+      </p>
+
+      <p class="flex">
+        c = <input type="number" name="" id="c" /> &nbsp; d =
+        <input type="number" name="" id="d" />
+      </p>
+      <p class="flex">n = <input type="number" name="" id="n" /></p>
+
+      <div id="check">
+        <center>
+          <button onclick="inverse()" class="submitButton">Get solution</button>
+        </center>
+        <p id="red" class="cool_font">SOLUTION</p>
+        <hr />
+        <div>
+          <p id="ans">
+            Hi ! Enter the details and click the button to get the solution 😇
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Created by: <b>Arpit Rathore</b> <br /></p>
+        <a href="https://github.com/ArpitRathore2020/Math" target="_blank">
+          GITHUB page
+        </a>
+      </div>
+    </div>
+    <script src="/js/matrix_inverse.js"></script>
+  </body>
+</html>
