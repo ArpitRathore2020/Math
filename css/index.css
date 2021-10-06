@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#main {
+  display: flex;
+}
+
+#index {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  margin-top: 100px;
+}
+
+.index-buttons {
+  font-size: medium;
+  font-weight: bolder;
+  cursor: pointer;
+  border: 3px solid black;
+  background-color: white;
+  color: black;
+  margin-bottom: 2px;
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.index-buttons:hover {
+  color: white;
+  background-color: black;
+  border-color: white;
+}
